@@ -32,6 +32,17 @@ Built for designers and developers who need accessible, production-ready color s
 
 ---
 
+## CI/CD
+
+| Workflow | Trigger | Steps |
+| --- | --- | --- |
+| CI | Every PR targeting `main` | Type check → Lint → Build |
+| Deploy | Push to `main` | Build → Deploy to Vercel (production) |
+
+Code review on every PR via **CodeRabbit** and **GitHub Copilot**.
+
+---
+
 ## Project Structure
 
 ```text
