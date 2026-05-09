@@ -37,6 +37,9 @@
     "typescript": "^5"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["sharp", "msw", "unrs-resolver"]
+    "onlyBuiltDependencies": ["sharp", "msw", "unrs-resolver"],
+    "overrides": {
+      "postcss": ">=8.5.14"
+    }
   }
 }
