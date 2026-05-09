@@ -1,0 +1,144 @@
+/* ─── Background effects ───────────────────────────────────────────────────── */
+
+.dotGrid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image: radial-gradient(circle, oklch(1 0 0 / 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.brandGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 75% 50%, oklch(0.55 0.26 278 / 0.13) 0%, transparent 65%);
+}
+
+/* ─── Text content ─────────────────────────────────────────────────────────── */
+
+.badge {
+  font-size: var(--fs-label);
+  background: oklch(1 0 0 / 0.06);
+  border: 1px solid oklch(1 0 0 / 0.12);
+  color: oklch(0.78 0.12 278);
+}
+
+.badgeDot {
+  background-color: oklch(0.65 0.22 278);
+}
+
+.title {
+  font-size: var(--fs-display);
+  color: oklch(0.98 0 0);
+}
+
+.titleGradient {
+  background-image: linear-gradient(135deg, oklch(0.68 0.22 278), oklch(0.68 0.20 220), oklch(0.65 0.18 185));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: var(--fs-body-lg);
+  color: oklch(0.72 0.04 275);
+}
+
+.finePrint {
+  font-size: var(--fs-caption);
+  color: oklch(0.42 0.03 275);
+}
+
+/* ─── CTAs ─────────────────────────────────────────────────────────────────── */
+
+.ctaPrimary {
+  font-size: var(--fs-button);
+  padding: var(--btn-py) var(--btn-px);
+  background-color: oklch(0.55 0.26 278);
+  color: oklch(0.98 0 0);
+}
+
+.ctaPrimary:hover { opacity: 0.9; }
+
+.ctaSecondary {
+  font-size: var(--fs-button);
+  padding: var(--btn-py) var(--btn-px);
+  border: 1px solid oklch(1 0 0 / 0.15);
+  color: oklch(0.88 0 0);
+}
+
+.ctaSecondary:hover { background-color: oklch(1 0 0 / 0.05); }
+
+/* ─── Mockup card ──────────────────────────────────────────────────────────── */
+
+.mockupCard {
+  background: oklch(0.14 0.02 278);
+  border: 1px solid oklch(1 0 0 / 0.10);
+  box-shadow:
+    0 25px 50px -12px oklch(0 0 0 / 0.6),
+    0 0 0 1px oklch(1 0 0 / 0.06);
+}
+
+.mockupChrome {
+  background: oklch(0.11 0.02 278);
+  border-bottom: 1px solid oklch(1 0 0 / 0.08);
+}
+
+.chromeDot1 { background: oklch(0.65 0.20 25); }
+.chromeDot2 { background: oklch(0.75 0.18 90); }
+.chromeDot3 { background: oklch(0.65 0.18 145); }
+
+.chromeAddress {
+  margin-left: 1rem;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: oklch(0.40 0.02 278);
+}
+
+.inputRow { border-bottom: 1px solid oklch(1 0 0 / 0.06); }
+
+.inputField { background: oklch(1 0 0 / 0.05); }
+
+.colorSwatch { background: oklch(0.55 0.26 278); }
+
+.colorValue {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: oklch(0.60 0.03 278);
+}
+
+.harmonySelect {
+  background: oklch(1 0 0 / 0.05);
+  color: oklch(0.55 0.03 278);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.paletteLabel { color: oklch(0.90 0 0); }
+.paletteRole  { color: oklch(0.45 0.02 278); }
+
+.wcagAAA { background: oklch(0.42 0.18 145); color: oklch(0.97 0 0); }
+.wcagAA  { background: oklch(0.42 0.16 185); color: oklch(0.97 0 0); }
+
+.shadeLabel {
+  font-size: 8px;
+  font-family: monospace;
+  color: oklch(0.32 0.02 278);
+}
+
+.exportBar {
+  background: oklch(0.11 0.02 278);
+  border-top: 1px solid oklch(1 0 0 / 0.08);
+}
+
+.exportFmtActive   { background: oklch(0.55 0.26 278); color: oklch(0.98 0 0); }
+.exportFmtInactive { background: oklch(1 0 0 / 0.07);  color: oklch(0.50 0.02 278); }
+
+.exportArrow { color: oklch(0.40 0.02 278); }
+
+/* ─── Bottom fade ──────────────────────────────────────────────────────────── */
+
+.fadeBottom {
+  background: linear-gradient(to top, oklch(0.10 0.02 275), transparent);
+}

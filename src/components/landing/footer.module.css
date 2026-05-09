@@ -1,0 +1,21 @@
+.footer {
+  border-top: 1px solid oklch(1 0 0 / 0.08);
+}
+
+.logo {
+  font-size: var(--fs-h3);
+  color: oklch(0.85 0 0);
+}
+
+.navLink {
+  font-size: var(--fs-body);
+  color: oklch(0.48 0.02 275);
+  transition: color 0.15s;
+}
+
+.navLink:hover { color: oklch(0.80 0 0); }
+
+.copyright {
+  font-size: var(--fs-caption);
+  color: oklch(0.38 0.02 275);
+}

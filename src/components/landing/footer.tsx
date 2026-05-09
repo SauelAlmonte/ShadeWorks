@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "./footer.module.css";
 
 const LINKS = [
   { label: "Features", href: "#features" },
@@ -9,29 +10,16 @@ const LINKS = [
 
 export default function Footer() {
   return (
-    <footer
-      className="border-t"
-      style={{
-        backgroundColor: "oklch(0.08 0.01 275)",
-        borderColor: "oklch(1 0 0 / 0.08)",
-      }}
-    >
+    <footer className={`${styles.footer} bg-surface-footer`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 font-bold"
-            style={{
-              fontSize: "var(--fs-h3)",
-              color: "oklch(0.85 0 0)",
-            }}
+            className={`${styles.logo} flex items-center gap-2.5 font-bold`}
             aria-label="ShadeWorks home"
           >
-            <span
-              className="w-5 h-5 rounded-md bg-brand shrink-0"
-              aria-hidden
-            />
+            <span className="w-5 h-5 rounded-md bg-brand shrink-0" aria-hidden />
             ShadeWorks
           </Link>
 
@@ -40,11 +28,7 @@ export default function Footer() {
             <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
               {LINKS.map(({ label, href }) => (
                 <li key={label}>
-                  <Link
-                    href={href}
-                    className="transition-colors hover:text-white/80"
-                  style={{ fontSize: "var(--fs-body)", color: "oklch(0.48 0.02 275)" }}
-                  >
+                  <Link href={href} className={styles.navLink}>
                     {label}
                   </Link>
                 </li>
@@ -53,7 +37,7 @@ export default function Footer() {
           </nav>
 
           {/* Copyright */}
-          <p style={{ fontSize: "var(--fs-caption)", color: "oklch(0.38 0.02 275)" }}>
+          <p className={styles.copyright}>
             © {new Date().getFullYear()} ShadeWorks
           </p>
         </div>

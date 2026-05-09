@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Check, Minus } from "lucide-react";
+import styles from "./pricing.module.css";
 
 const PLANS = [
   {
@@ -44,43 +45,19 @@ const PLANS = [
 
 export default function Pricing() {
   return (
-    <section
-      className="py-24 lg:py-32 relative overflow-hidden"
-      style={{ backgroundColor: "oklch(0.10 0.02 275)" }}
-      id="pricing"
-    >
-      {/* Brand glow */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at top, oklch(0.55 0.26 278 / 0.12) 0%, transparent 70%)",
-        }}
-        aria-hidden
-      />
+    <section className="py-24 lg:py-32 relative overflow-hidden bg-surface-invert" id="pricing">
+      <div className={styles.brandGlow} aria-hidden />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16">
-          <span
-            className="font-semibold uppercase tracking-widest"
-            style={{ fontSize: "var(--fs-label)", color: "oklch(0.68 0.22 278)" }}
-          >
+          <span className={`${styles.sectionLabel} font-semibold uppercase tracking-widest`}>
             Pricing
           </span>
-          <h2
-            className="font-bold tracking-tight"
-            style={{ fontSize: "var(--fs-h2)", color: "oklch(0.97 0 0)" }}
-          >
+          <h2 className={`${styles.sectionHeading} font-bold tracking-tight`}>
             Simple, honest pricing
           </h2>
-          <p
-            className="max-w-md"
-            style={{
-              fontSize: "var(--fs-body-lg)",
-              color: "oklch(0.65 0.03 275)",
-            }}
-          >
+          <p className={`${styles.sectionSubtext} max-w-md`}>
             Start free. Upgrade when you need the full system.
           </p>
         </div>
@@ -90,94 +67,42 @@ export default function Pricing() {
           {PLANS.map((plan) => (
             <div
               key={plan.name}
-              className="flex flex-col rounded-2xl p-8"
-              style={
-                plan.highlight
-                  ? {
-                      background: "oklch(0.55 0.26 278)",
-                      boxShadow:
-                        "0 20px 40px -10px oklch(0.55 0.26 278 / 0.4)",
-                    }
-                  : {
-                      background: "oklch(0.14 0.02 278)",
-                      border: "1px solid oklch(1 0 0 / 0.10)",
-                    }
-              }
+              className={`${plan.highlight ? styles.cardPro : styles.cardFree} flex flex-col rounded-2xl p-8`}
             >
               <div className="flex flex-col gap-2 mb-8">
-                <h3
-                  className="font-semibold"
-                  style={{
-                    fontSize: "var(--fs-h3)",
-                    color: plan.highlight ? "oklch(0.98 0 0)" : "oklch(0.90 0 0)",
-                  }}
-                >
+                <h3 className={`${plan.highlight ? styles.namePro : styles.nameFree} font-semibold`}>
                   {plan.name}
                 </h3>
                 <div className="flex items-baseline gap-1.5">
-                  <span
-                    className="font-bold"
-                    style={{
-                      fontSize: "var(--fs-display)",
-                      color: plan.highlight
-                        ? "oklch(0.98 0 0)"
-                        : "oklch(0.95 0 0)",
-                    }}
-                  >
+                  <span className={`${plan.highlight ? styles.pricePro : styles.priceFree} font-bold`}>
                     {plan.price}
                   </span>
-                  <span
-                    style={{ fontSize: "var(--fs-caption)",
-                      color: plan.highlight
-                        ? "oklch(0.90 0.05 278)"
-                        : "oklch(0.55 0.02 278)",
-                    }}
-                  >
+                  <span className={plan.highlight ? styles.periodPro : styles.periodFree}>
                     {plan.period}
                   </span>
                 </div>
-                <p
-                  className="leading-relaxed"
-                  style={{
-                    fontSize: "var(--fs-body)",
-                    color: plan.highlight ? "oklch(0.88 0.06 278)" : "oklch(0.55 0.02 278)",
-                  }}
-                >
+                <p className={`${plan.highlight ? styles.descPro : styles.descFree} leading-relaxed`}>
                   {plan.description}
                 </p>
               </div>
 
               <ul className="flex flex-col gap-3 mb-8 flex-1">
                 {plan.features.map(({ text, included }) => (
-                  <li key={text} className="flex items-center gap-3" style={{ fontSize: "var(--fs-body)" }}>
+                  <li key={text} className={`${styles.featureItem} flex items-center gap-3`}>
                     {included ? (
                       <Check
                         size={16}
-                        className="shrink-0"
-                        style={{
-                          color: plan.highlight
-                            ? "oklch(0.95 0 0)"
-                            : "oklch(0.65 0.22 278)",
-                        }}
+                        className={`${plan.highlight ? styles.checkPro : styles.checkFree} shrink-0`}
                         aria-hidden
                       />
                     ) : (
-                      <Minus
-                        size={16}
-                        className="shrink-0"
-                        style={{ color: "oklch(0.40 0.02 278)" }}
-                        aria-hidden
-                      />
+                      <Minus size={16} className={`${styles.minusIcon} shrink-0`} aria-hidden />
                     )}
-                    <span
-                      style={{
-                        color: included
-                          ? plan.highlight
-                            ? "oklch(0.95 0 0)"
-                            : "oklch(0.80 0 0)"
-                          : "oklch(0.42 0.02 278)",
-                      }}
-                    >
+                    <span className={
+                      included
+                        ? plan.highlight ? styles.featureTextIncludedPro : styles.featureTextIncludedFree
+                        : styles.featureTextExcluded
+                    }>
                       {text}
                     </span>
                   </li>
@@ -186,13 +111,7 @@ export default function Pricing() {
 
               <Link
                 href={plan.href}
-                className="w-full inline-flex items-center justify-center rounded-xl font-semibold py-3 transition-all hover:opacity-90 focus-visible:outline-2"
-                style={{
-                  fontSize: "var(--fs-button)",
-                  ...(plan.highlight
-                    ? { background: "oklch(0.98 0 0)", color: "oklch(0.30 0.20 278)" }
-                    : { background: "oklch(0.55 0.26 278)", color: "oklch(0.98 0 0)" }),
-                }}
+                className={`${plan.highlight ? styles.ctaPro : styles.ctaFree} w-full inline-flex items-center justify-center rounded-xl font-semibold transition-opacity hover:opacity-90 focus-visible:outline-2`}
               >
                 {plan.cta}
               </Link>

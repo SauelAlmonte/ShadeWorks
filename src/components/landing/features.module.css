@@ -1,0 +1,5 @@
+.sectionLabel { font-size: var(--fs-label); }
+.heading      { font-size: var(--fs-h2); }
+.subtext      { font-size: var(--fs-body-lg); }
+.cardTitle    { font-size: var(--fs-h3); }
+.cardDesc     { font-size: var(--fs-body); }
