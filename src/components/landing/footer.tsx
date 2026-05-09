@@ -23,7 +23,7 @@ export default function Footer() {
             href="/"
             className="flex items-center gap-2.5 font-bold"
             style={{
-              fontSize: "clamp(1rem, 1.2vw + 0.2rem, 1.125rem)",
+              fontSize: "var(--fs-h3)",
               color: "oklch(0.85 0 0)",
             }}
             aria-label="ShadeWorks home"
@@ -42,8 +42,8 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-sm transition-colors hover:text-white/80"
-                    style={{ color: "oklch(0.48 0.02 275)" }}
+                    className="transition-colors hover:text-white/80"
+                  style={{ fontSize: "var(--fs-body)", color: "oklch(0.48 0.02 275)" }}
                   >
                     {label}
                   </Link>
@@ -53,7 +53,7 @@ export default function Footer() {
           </nav>
 
           {/* Copyright */}
-          <p className="text-sm" style={{ color: "oklch(0.38 0.02 275)" }}>
+          <p style={{ fontSize: "var(--fs-caption)", color: "oklch(0.38 0.02 275)" }}>
             © {new Date().getFullYear()} ShadeWorks
           </p>
         </div>

@@ -63,24 +63,21 @@ export default function Pricing() {
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16">
           <span
-            className="text-sm font-semibold uppercase tracking-widest"
-            style={{ color: "oklch(0.68 0.22 278)" }}
+            className="font-semibold uppercase tracking-widest"
+            style={{ fontSize: "var(--fs-label)", color: "oklch(0.68 0.22 278)" }}
           >
             Pricing
           </span>
           <h2
             className="font-bold tracking-tight"
-            style={{
-              fontSize: "clamp(2rem, 3.5vw + 0.5rem, 3rem)",
-              color: "oklch(0.97 0 0)",
-            }}
+            style={{ fontSize: "var(--fs-h2)", color: "oklch(0.97 0 0)" }}
           >
             Simple, honest pricing
           </h2>
           <p
             className="max-w-md"
             style={{
-              fontSize: "clamp(1rem, 1.2vw + 0.2rem, 1.125rem)",
+              fontSize: "var(--fs-body-lg)",
               color: "oklch(0.65 0.03 275)",
             }}
           >
@@ -109,11 +106,10 @@ export default function Pricing() {
             >
               <div className="flex flex-col gap-2 mb-8">
                 <h3
-                  className="font-semibold text-lg"
+                  className="font-semibold"
                   style={{
-                    color: plan.highlight
-                      ? "oklch(0.98 0 0)"
-                      : "oklch(0.90 0 0)",
+                    fontSize: "var(--fs-h3)",
+                    color: plan.highlight ? "oklch(0.98 0 0)" : "oklch(0.90 0 0)",
                   }}
                 >
                   {plan.name}
@@ -122,7 +118,7 @@ export default function Pricing() {
                   <span
                     className="font-bold"
                     style={{
-                      fontSize: "clamp(2.25rem, 4vw, 3rem)",
+                      fontSize: "var(--fs-display)",
                       color: plan.highlight
                         ? "oklch(0.98 0 0)"
                         : "oklch(0.95 0 0)",
@@ -131,8 +127,7 @@ export default function Pricing() {
                     {plan.price}
                   </span>
                   <span
-                    className="text-sm"
-                    style={{
+                    style={{ fontSize: "var(--fs-caption)",
                       color: plan.highlight
                         ? "oklch(0.90 0.05 278)"
                         : "oklch(0.55 0.02 278)",
@@ -142,11 +137,10 @@ export default function Pricing() {
                   </span>
                 </div>
                 <p
-                  className="text-sm leading-relaxed"
+                  className="leading-relaxed"
                   style={{
-                    color: plan.highlight
-                      ? "oklch(0.88 0.06 278)"
-                      : "oklch(0.55 0.02 278)",
+                    fontSize: "var(--fs-body)",
+                    color: plan.highlight ? "oklch(0.88 0.06 278)" : "oklch(0.55 0.02 278)",
                   }}
                 >
                   {plan.description}
@@ -155,7 +149,7 @@ export default function Pricing() {
 
               <ul className="flex flex-col gap-3 mb-8 flex-1">
                 {plan.features.map(({ text, included }) => (
-                  <li key={text} className="flex items-center gap-3 text-sm">
+                  <li key={text} className="flex items-center gap-3" style={{ fontSize: "var(--fs-body)" }}>
                     {included ? (
                       <Check
                         size={16}
@@ -192,18 +186,13 @@ export default function Pricing() {
 
               <Link
                 href={plan.href}
-                className="w-full inline-flex items-center justify-center rounded-xl font-semibold text-sm py-3 transition-all hover:opacity-90 focus-visible:outline-2"
-                style={
-                  plan.highlight
-                    ? {
-                        background: "oklch(0.98 0 0)",
-                        color: "oklch(0.30 0.20 278)",
-                      }
-                    : {
-                        background: "oklch(0.55 0.26 278)",
-                        color: "oklch(0.98 0 0)",
-                      }
-                }
+                className="w-full inline-flex items-center justify-center rounded-xl font-semibold py-3 transition-all hover:opacity-90 focus-visible:outline-2"
+                style={{
+                  fontSize: "var(--fs-button)",
+                  ...(plan.highlight
+                    ? { background: "oklch(0.98 0 0)", color: "oklch(0.30 0.20 278)" }
+                    : { background: "oklch(0.55 0.26 278)", color: "oklch(0.98 0 0)" }),
+                }}
               >
                 {plan.cta}
               </Link>

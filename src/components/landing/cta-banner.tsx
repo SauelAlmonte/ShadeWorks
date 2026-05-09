@@ -27,7 +27,7 @@ export default function CtaBanner() {
             <h2
               className="font-bold tracking-tight"
               style={{
-                fontSize: "clamp(2rem, 4vw + 0.5rem, 3.25rem)",
+                fontSize: "var(--fs-h2)",
                 color: "oklch(0.98 0 0)",
               }}
             >
@@ -36,7 +36,7 @@ export default function CtaBanner() {
             <p
               className="leading-relaxed"
               style={{
-                fontSize: "clamp(1rem, 1.2vw + 0.2rem, 1.2rem)",
+                fontSize: "var(--fs-body-lg)",
                 color: "oklch(0.88 0.05 278)",
               }}
             >
@@ -47,8 +47,9 @@ export default function CtaBanner() {
           <div className="relative flex flex-col sm:flex-row gap-3">
             <Link
               href="/signup"
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm px-7 py-3.5 transition-all hover:opacity-90 focus-visible:outline-2"
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-semibold px-7 py-3.5 transition-all hover:opacity-90 focus-visible:outline-2"
               style={{
+                fontSize: "var(--fs-button)",
                 background: "oklch(0.98 0 0)",
                 color: "oklch(0.30 0.20 278)",
               }}
@@ -58,8 +59,9 @@ export default function CtaBanner() {
             </Link>
             <Link
               href="#features"
-              className="inline-flex items-center justify-center rounded-xl font-semibold text-sm px-7 py-3.5 transition-all hover:bg-white/10 focus-visible:outline-2"
+              className="inline-flex items-center justify-center rounded-xl font-semibold px-7 py-3.5 transition-all hover:bg-white/10 focus-visible:outline-2"
               style={{
+                fontSize: "var(--fs-button)",
                 border: "1px solid oklch(1 0 0 / 0.30)",
                 color: "oklch(0.98 0 0)",
               }}

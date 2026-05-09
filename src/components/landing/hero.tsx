@@ -103,7 +103,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center overflow-hidden pt-16"
+      className="relative min-h-dvh flex items-center overflow-hidden pt-16"
       style={{ backgroundColor: "oklch(0.10 0.02 275)" }}
     >
       {/* Dot grid */}
@@ -131,8 +131,9 @@ export default function Hero() {
         {/* Text */}
         <div className="flex flex-col gap-6 lg:gap-7">
           <div
-            className="hero-badge inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-sm font-medium"
+            className="hero-badge inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 font-medium"
             style={{
+              fontSize: "var(--fs-label)",
               background: "oklch(1 0 0 / 0.06)",
               border: "1px solid oklch(1 0 0 / 0.12)",
               color: "oklch(0.78 0.12 278)",
@@ -149,7 +150,7 @@ export default function Hero() {
           <h1
             className="hero-title font-bold leading-[1.08] tracking-tight"
             style={{
-              fontSize: "clamp(2.75rem, 6vw + 1rem, 5.25rem)",
+              fontSize: "var(--fs-display)",
               color: "oklch(0.98 0 0)",
             }}
           >
@@ -171,7 +172,7 @@ export default function Hero() {
           <p
             className="hero-subtitle max-w-lg leading-relaxed"
             style={{
-              fontSize: "clamp(1rem, 1.5vw + 0.2rem, 1.2rem)",
+              fontSize: "var(--fs-body-lg)",
               color: "oklch(0.72 0.04 275)",
             }}
           >
@@ -183,10 +184,10 @@ export default function Hero() {
           <div className="hero-ctas flex flex-col sm:flex-row gap-3 pt-1">
             <Link
               href="/signup"
-              className="inline-flex items-center justify-center gap-2 rounded-xl font-semibold text-sm transition-opacity hover:opacity-90 focus-visible:outline-2"
+              className="inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-opacity hover:opacity-90 focus-visible:outline-2"
               style={{
-                padding:
-                  "clamp(0.65rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.75rem)",
+                fontSize: "var(--fs-button)",
+                padding: "clamp(0.65rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.75rem)",
                 backgroundColor: "oklch(0.55 0.26 278)",
                 color: "oklch(0.98 0 0)",
               }}
@@ -196,10 +197,10 @@ export default function Hero() {
             </Link>
             <Link
               href="/login"
-              className="inline-flex items-center justify-center rounded-xl font-semibold text-sm transition-colors hover:bg-white/5 focus-visible:outline-2"
+              className="inline-flex items-center justify-center rounded-xl font-semibold transition-colors hover:bg-white/5 focus-visible:outline-2"
               style={{
-                padding:
-                  "clamp(0.65rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.75rem)",
+                fontSize: "var(--fs-button)",
+                padding: "clamp(0.65rem, 1.5vw, 0.75rem) clamp(1.25rem, 3vw, 1.75rem)",
                 border: "1px solid oklch(1 0 0 / 0.15)",
                 color: "oklch(0.88 0 0)",
               }}
@@ -208,7 +209,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <p className="text-sm" style={{ color: "oklch(0.42 0.03 275)" }}>
+          <p style={{ fontSize: "var(--fs-caption)", color: "oklch(0.42 0.03 275)" }}>
             Free forever · No credit card required
           </p>
         </div>
