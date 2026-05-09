@@ -1,5 +1,6 @@
 import { Pipette, Shuffle, Download } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import styles from "./how-it-works.module.css";
 
 const STEPS: {
   step: number;
@@ -32,23 +33,17 @@ const STEPS: {
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 lg:py-32" style={{ background: "oklch(0.97 0.005 275)" }}>
+    <section className="py-24 lg:py-32 bg-surface-subtle">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16">
-          <span className="text-sm font-semibold text-brand uppercase tracking-widest">
+          <span className={`${styles.sectionLabel} font-semibold text-brand uppercase tracking-widest`}>
             How it works
           </span>
-          <h2
-            className="font-bold tracking-tight text-foreground"
-            style={{ fontSize: "clamp(2rem, 3.5vw + 0.5rem, 3rem)" }}
-          >
+          <h2 className={`${styles.heading} font-bold tracking-tight text-foreground`}>
             From one color to a full system
           </h2>
-          <p
-            className="text-muted-foreground max-w-xl"
-            style={{ fontSize: "clamp(1rem, 1.2vw + 0.2rem, 1.125rem)" }}
-          >
+          <p className={`${styles.subtext} text-muted-foreground max-w-xl`}>
             Three steps. Under a minute.
           </p>
         </div>
@@ -57,8 +52,7 @@ export default function HowItWorks() {
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-4 relative">
           {/* Connector line (desktop) */}
           <div
-            className="hidden lg:block absolute top-10 left-[calc(16.66%+1.5rem)] right-[calc(16.66%+1.5rem)] h-px"
-            style={{ background: "oklch(0.88 0.05 278)" }}
+            className={`${styles.connector} hidden lg:block absolute top-10 left-[calc(16.66%+1.5rem)] right-[calc(16.66%+1.5rem)] h-px`}
             aria-hidden
           />
 
@@ -73,7 +67,7 @@ export default function HowItWorks() {
                   <Icon size={28} className="text-brand" aria-hidden />
                 </div>
                 <span
-                  className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand text-brand-foreground text-xs font-bold flex items-center justify-center"
+                  className={`${styles.stepBadge} absolute -top-2 -right-2 w-6 h-6 rounded-full bg-brand text-brand-foreground font-bold flex items-center justify-center`}
                   aria-label={`Step ${step}`}
                 >
                   {step}
@@ -81,10 +75,8 @@ export default function HowItWorks() {
               </div>
 
               <div className="flex flex-col gap-2 max-w-xs">
-                <h3 className="font-semibold text-foreground text-lg">
-                  {title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className={`${styles.stepTitle} font-semibold text-foreground`}>{title}</h3>
+                <p className={`${styles.stepDesc} text-muted-foreground leading-relaxed`}>
                   {description}
                 </p>
               </div>

@@ -10,7 +10,7 @@ export default function Nav() {
         <Link
           href="/"
           className="flex items-center gap-2.5 font-bold tracking-tight"
-          style={{ fontSize: "clamp(1.1rem, 1.5vw + 0.25rem, 1.25rem)" }}
+          style={{ fontSize: "var(--fs-h3)" }}
           aria-label="ShadeWorks home"
         >
           <span
@@ -23,13 +23,15 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           <Link
             href="/login"
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-lg"
+            className="text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-lg"
+            style={{ fontSize: "var(--fs-button)" }}
           >
             Sign in
           </Link>
           <Link
             href="/signup"
-            className="text-sm font-medium px-4 py-2 rounded-lg bg-brand text-brand-foreground hover:opacity-90 transition-opacity"
+            className="font-medium px-4 py-2 rounded-lg bg-brand text-brand-foreground hover:opacity-90 transition-opacity"
+            style={{ fontSize: "var(--fs-button)" }}
           >
             Get started
           </Link>

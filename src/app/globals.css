@@ -8,6 +8,28 @@
 /* All colors defined with hsl() wrapper at root level (NOT inside @layer base) */
 
 :root {
+  /*
+   * Fluid type scale — anchored to project breakpoints:
+   * mobile 425px → tablet 768px → laptop 1024px → large 1440px → 4k 2056px
+   */
+  --fs-display:  clamp(2rem,    3vw + 1.2rem,    5rem);
+  --fs-h2:       clamp(1.5rem,  1.5vw + 1.1rem,  3rem);
+  --fs-h3:       clamp(0.9375rem, 0.3vw + 0.875rem, 1.25rem);
+  --fs-body-lg:  clamp(1rem,    0.2vw + 0.95rem,  1.2rem);
+  --fs-body:     clamp(0.875rem, 0.12vw + 0.85rem, 1rem);
+  --fs-caption:  clamp(0.75rem, 0.1vw + 0.72rem,  0.875rem);
+  --fs-label:    clamp(0.6875rem, 0.1vw + 0.66rem, 0.8125rem);
+  --fs-button:   clamp(0.8125rem, 0.12vw + 0.78rem, 0.9375rem);
+
+  /* Button padding — scales with viewport alongside type */
+  --btn-px: clamp(1.25rem, 0.5vw + 1.12rem, 1.75rem);
+  --btn-py: clamp(0.625rem, 0.25vw + 0.56rem, 0.875rem);
+
+  /* Landing surfaces */
+  --surface-invert: oklch(0.10 0.02 275);
+  --surface-subtle: oklch(0.97 0.005 275);
+  --surface-footer: oklch(0.08 0.01 275);
+
   /* Brand */
   --brand: oklch(0.55 0.26 278);
   --brand-foreground: oklch(0.985 0 0);
@@ -179,6 +201,11 @@
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-subtle: var(--brand-subtle);
   --color-brand-muted: var(--brand-muted);
+
+  /* Landing surfaces */
+  --color-surface-invert: var(--surface-invert);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-footer: var(--surface-footer);
 
   /* Fonts */
   --font-sans: var(--font-geist-sans);

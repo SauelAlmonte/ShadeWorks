@@ -7,6 +7,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import styles from "./features.module.css";
 
 const FEATURES: {
   icon: LucideIcon;
@@ -57,19 +58,13 @@ export default function Features() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16">
-          <span className="text-sm font-semibold text-brand uppercase tracking-widest">
+          <span className={`${styles.sectionLabel} font-semibold text-brand uppercase tracking-widest`}>
             What you get
           </span>
-          <h2
-            className="font-bold tracking-tight text-foreground"
-            style={{ fontSize: "clamp(2rem, 3.5vw + 0.5rem, 3rem)" }}
-          >
+          <h2 className={`${styles.heading} font-bold tracking-tight text-foreground`}>
             Everything a color system needs
           </h2>
-          <p
-            className="text-muted-foreground max-w-xl"
-            style={{ fontSize: "clamp(1rem, 1.2vw + 0.2rem, 1.125rem)" }}
-          >
+          <p className={`${styles.subtext} text-muted-foreground max-w-xl`}>
             Built specifically for designers and developers who need accessible,
             production-ready color systems — fast.
           </p>
@@ -90,8 +85,8 @@ export default function Features() {
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="font-semibold text-foreground">{title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className={`${styles.cardTitle} font-semibold text-foreground`}>{title}</h3>
+                <p className={`${styles.cardDesc} text-muted-foreground leading-relaxed`}>
                   {description}
                 </p>
               </div>

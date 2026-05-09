@@ -1,0 +1,7 @@
+.connector    { background: oklch(0.88 0.05 278); }
+.sectionLabel { font-size: var(--fs-label); }
+.heading      { font-size: var(--fs-h2); }
+.subtext      { font-size: var(--fs-body-lg); }
+.stepBadge    { font-size: var(--fs-caption); }
+.stepTitle    { font-size: var(--fs-h3); }
+.stepDesc     { font-size: var(--fs-body); }

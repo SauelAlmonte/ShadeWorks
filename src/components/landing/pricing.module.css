@@ -1,0 +1,83 @@
+/* ─── Section ──────────────────────────────────────────────────────────────── */
+
+.brandGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 600px;
+  height: 300px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: radial-gradient(ellipse at top, oklch(0.55 0.26 278 / 0.12) 0%, transparent 70%);
+}
+
+.sectionLabel {
+  font-size: var(--fs-label);
+  color: oklch(0.68 0.22 278);
+}
+
+.sectionHeading {
+  font-size: var(--fs-h2);
+  color: oklch(0.97 0 0);
+}
+
+.sectionSubtext {
+  font-size: var(--fs-body-lg);
+  color: oklch(0.65 0.03 275);
+}
+
+/* ─── Cards ────────────────────────────────────────────────────────────────── */
+
+.cardFree {
+  background: oklch(0.14 0.02 278);
+  border: 1px solid oklch(1 0 0 / 0.10);
+}
+
+.cardPro {
+  background: oklch(0.55 0.26 278);
+  box-shadow: 0 20px 40px -10px oklch(0.55 0.26 278 / 0.4);
+}
+
+/* ─── Card typography ──────────────────────────────────────────────────────── */
+
+.nameFree   { font-size: var(--fs-h3);      color: oklch(0.90 0 0); }
+.namePro    { font-size: var(--fs-h3);      color: oklch(0.98 0 0); }
+
+.priceFree  { font-size: var(--fs-display); color: oklch(0.95 0 0); }
+.pricePro   { font-size: var(--fs-display); color: oklch(0.98 0 0); }
+
+.periodFree { font-size: var(--fs-caption); color: oklch(0.55 0.02 278); }
+.periodPro  { font-size: var(--fs-caption); color: oklch(0.90 0.05 278); }
+
+.descFree   { font-size: var(--fs-body);    color: oklch(0.55 0.02 278); }
+.descPro    { font-size: var(--fs-body);    color: oklch(0.88 0.06 278); }
+
+/* ─── Feature list ─────────────────────────────────────────────────────────── */
+
+.featureItem        { font-size: var(--fs-body); }
+.checkFree          { color: oklch(0.65 0.22 278); }
+.checkPro           { color: oklch(0.95 0 0); }
+.minusIcon          { color: oklch(0.40 0.02 278); }
+.featureTextIncludedFree { color: oklch(0.80 0 0); }
+.featureTextIncludedPro  { color: oklch(0.95 0 0); }
+.featureTextExcluded     { color: oklch(0.42 0.02 278); }
+
+/* ─── CTAs ─────────────────────────────────────────────────────────────────── */
+
+.ctaFree {
+  font-size: var(--fs-button);
+  padding: var(--btn-py) var(--btn-px);
+  background: oklch(0.55 0.26 278);
+  color: oklch(0.98 0 0);
+}
+
+.ctaFree:hover { opacity: 0.9; }
+
+.ctaPro {
+  font-size: var(--fs-button);
+  padding: var(--btn-py) var(--btn-px);
+  background: oklch(0.98 0 0);
+  color: oklch(0.30 0.20 278);
+}
+
+.ctaPro:hover { opacity: 0.9; }

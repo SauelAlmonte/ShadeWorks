@@ -1,0 +1,39 @@
+.gradientCard {
+  background: linear-gradient(135deg, oklch(0.55 0.26 278), oklch(0.50 0.22 240), oklch(0.48 0.18 210));
+}
+
+.dotPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.20;
+  background-image: radial-gradient(circle, oklch(1 0 0 / 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.heading {
+  font-size: var(--fs-h2);
+  color: oklch(0.98 0 0);
+}
+
+.subtext {
+  font-size: var(--fs-body-lg);
+  color: oklch(0.88 0.05 278);
+}
+
+.ctaPrimary {
+  font-size: var(--fs-button);
+  padding: var(--btn-py) var(--btn-px);
+  background: oklch(0.98 0 0);
+  color: oklch(0.30 0.20 278);
+}
+
+.ctaPrimary:hover { opacity: 0.9; }
+
+.ctaSecondary {
+  font-size: var(--fs-button);
+  padding: var(--btn-py) var(--btn-px);
+  border: 1px solid oklch(1 0 0 / 0.30);
+  color: oklch(0.98 0 0);
+}
+
+.ctaSecondary:hover { background-color: oklch(1 0 0 / 0.10); }
