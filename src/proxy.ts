@@ -5,6 +5,18 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
 export async function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  const isProtected =
+    pathname.startsWith("/dashboard") || pathname.startsWith("/palette");
+  const isAuthRoute =
+    pathname.startsWith("/login") || pathname.startsWith("/signup");
+
+  // Only hit Supabase on routes that actually need auth state
+  if (!isProtected && !isAuthRoute) {
+    return NextResponse.next({ request });
+  }
+
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -32,16 +44,12 @@ export async function proxy(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { pathname } = request.nextUrl;
-
   // Redirect unauthenticated users away from protected routes
-  const isProtected = pathname.startsWith("/dashboard") || pathname.startsWith("/palette");
   if (isProtected && !user) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
   // Redirect authenticated users away from auth routes
-  const isAuthRoute = pathname.startsWith("/login") || pathname.startsWith("/signup");
   if (isAuthRoute && user) {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
